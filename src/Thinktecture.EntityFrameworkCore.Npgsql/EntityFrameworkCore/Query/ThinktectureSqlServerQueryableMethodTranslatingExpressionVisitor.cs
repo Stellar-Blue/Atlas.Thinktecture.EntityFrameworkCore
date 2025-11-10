@@ -17,8 +17,9 @@ public class ThinktectureNpgsqlQueryableMethodTranslatingExpressionVisitor
    public ThinktectureNpgsqlQueryableMethodTranslatingExpressionVisitor(
       QueryableMethodTranslatingExpressionVisitorDependencies dependencies,
       RelationalQueryableMethodTranslatingExpressionVisitorDependencies relationalDependencies,
-      QueryCompilationContext queryCompilationContext)
-      : base(dependencies, relationalDependencies, queryCompilationContext)
+      RelationalQueryCompilationContext queryCompilationContext,
+      INpgsqlSingletonOptions npgsqlSingletonOptions)
+      : base(dependencies, relationalDependencies, queryCompilationContext, npgsqlSingletonOptions)
    {
    }
 

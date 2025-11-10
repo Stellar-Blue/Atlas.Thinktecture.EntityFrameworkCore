@@ -47,6 +47,12 @@ public sealed class WindowFunctionOrderingsExpression : SqlExpression, INotNulla
       expressionPrinter.VisitCollection(Orderings);
    }
 
+   /// <inheritdoc />
+   public override SqlExpression Quote()
+   {
+      return this;
+   }
+
    /// <summary>
    /// Adds provided <paramref name="orderings"/> to existing <see cref="Orderings"/> and returns a new <see cref="WindowFunctionOrderingsExpression"/>.
    /// </summary>

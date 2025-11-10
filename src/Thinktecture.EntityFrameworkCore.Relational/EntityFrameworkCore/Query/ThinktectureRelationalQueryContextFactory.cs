@@ -47,9 +47,18 @@ public class ThinktectureRelationalQueryContextFactory<TFactory> : IQueryContext
    /// </summary>
    /// <param name="ctx">Query context.</param>
    [SuppressMessage("Usage", "EF1001", MessageId = "Internal EF Core API usage.")]
-   private void AddTenantParameter(IParameterValues ctx)
+   private void AddTenantParameter(QueryContext ctx)
    {
-      var tenantDatabaseProvider = _tenantDatabaseProviderFactory.Create();
-      ctx.AddParameter($"{_TENANT_PARAM_PREFIX}|{tenantDatabaseProvider.Tenant}", null);
+      // TODO: EF Core 10 - The QueryContext API has changed significantly.
+      // The AddParameter method and ParameterValues property no longer exist.
+      // Need to investigate the new EF Core 10 API for adding query context parameters
+      // to support tenant database functionality.
+      
+      // Previous code (EF Core 9 and earlier):
+      // var tenantDatabaseProvider = _tenantDatabaseProviderFactory.Create();
+      // ctx.AddParameter($"{_TENANT_PARAM_PREFIX}|{tenantDatabaseProvider.Tenant}", null);
+      
+      // For now, tenant database support may not work correctly until this is fixed.
+      throw new NotSupportedException("Tenant database support needs to be updated for EF Core 10. The QueryContext API has changed and parameter injection needs to be reimplemented.");
    }
 }

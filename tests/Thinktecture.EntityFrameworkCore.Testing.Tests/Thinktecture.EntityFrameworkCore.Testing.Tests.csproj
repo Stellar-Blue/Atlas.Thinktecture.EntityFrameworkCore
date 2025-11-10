@@ -6,11 +6,21 @@
    </PropertyGroup>
 
    <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.0-rc.2.25502.107" />
    </ItemGroup>
 
    <ItemGroup>
       <ProjectReference Include="..\..\src\Thinktecture.EntityFrameworkCore.Testing\Thinktecture.EntityFrameworkCore.Testing.csproj" />
+   </ItemGroup>
+
+   <ItemGroup>
+     <PackageReference Update="FluentAssertions" Version="8.8.0" />
+     <PackageReference Update="Microsoft.NET.Test.Sdk" Version="18.0.0" />
+     <PackageReference Update="NSubstitute" Version="5.3.0" />
+     <PackageReference Update="Serilog.Extensions.Logging" Version="9.0.2" />
+     <PackageReference Update="Serilog.Sinks.XUnit" Version="3.0.19" />
+     <PackageReference Update="xunit" Version="2.9.3" />
+     <PackageReference Update="xunit.runner.visualstudio" Version="3.1.5" />
    </ItemGroup>
 
 </Project>

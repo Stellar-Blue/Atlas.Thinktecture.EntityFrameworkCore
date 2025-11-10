@@ -114,6 +114,15 @@ public class WindowFunctionExpression : SqlExpression
    }
 
    /// <inheritdoc />
+   public override SqlExpression Quote()
+   {
+      return new WindowFunctionExpression(
+         (SqlExpression)AggregateFunction.Quote(),
+         Partitions.Select(p => (SqlExpression)p.Quote()).ToList(),
+         Orderings);
+   }
+
+   /// <inheritdoc />
    public override bool Equals(object? obj)
    {
       return obj != null

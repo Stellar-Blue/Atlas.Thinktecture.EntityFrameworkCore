@@ -26,6 +26,6 @@ public sealed class ThinktectureSqliteQueryableMethodTranslatingExpressionVisito
    /// <inheritdoc />
    public QueryableMethodTranslatingExpressionVisitor Create(QueryCompilationContext queryCompilationContext)
    {
-      return new ThinktectureSqliteQueryableMethodTranslatingExpressionVisitor(_dependencies, _relationalDependencies, queryCompilationContext);
+      return new ThinktectureSqliteQueryableMethodTranslatingExpressionVisitor(_dependencies, _relationalDependencies, (RelationalQueryCompilationContext)queryCompilationContext);
    }
 }

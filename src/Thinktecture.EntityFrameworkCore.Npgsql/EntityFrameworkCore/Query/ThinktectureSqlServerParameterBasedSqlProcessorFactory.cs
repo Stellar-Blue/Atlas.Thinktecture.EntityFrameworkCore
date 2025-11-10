@@ -18,8 +18,8 @@ public class ThinktectureNpgsqlParameterBasedSqlProcessorFactory : IRelationalPa
    }
 
    /// <inheritdoc />
-   public RelationalParameterBasedSqlProcessor Create(bool useRelationalNulls)
+   public RelationalParameterBasedSqlProcessor Create(RelationalParameterBasedSqlProcessorParameters parameters)
    {
-      return new ThinktectureNpgsqlParameterBasedSqlProcessor(_dependencies, useRelationalNulls);
+      return new ThinktectureNpgsqlParameterBasedSqlProcessor(_dependencies, parameters);
    }
 }
