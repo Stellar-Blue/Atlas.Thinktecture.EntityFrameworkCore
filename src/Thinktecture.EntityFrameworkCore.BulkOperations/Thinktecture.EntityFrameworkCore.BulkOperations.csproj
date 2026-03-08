@@ -2,7 +2,7 @@
 
     <PropertyGroup>
       <PackageId>Atlas.Thinktecture.EntityFrameworkCore.BulkOperations</PackageId>
-		<Version>10.0.0-beta01</Version>
+		<Version>10.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
